@@ -7,6 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Check, Loader2 } from "lucide-react";
 import Earth from "@/components/ui/globe";
 
+import { Link } from "react-router-dom";
+import {ArrowLeft} from "lucide-react"
+
+
 export default function ContactUs() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,20 +44,29 @@ export default function ContactUs() {
 
   return (
     <section className="min-h-screen flex items-center justify-center w-full overflow-hidden bg-background py-16 md:py-24 bg-gradient-to-br from-slate-950 via-purple-950/20 to-slate-900">
-      <div
-        className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full opacity-20 blur-[120px]"
-        style={{
-          background: `radial-gradient(circle at center, #e60a64, transparent 70%)`,
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full opacity-10 blur-[100px]"
-        style={{
-          background: `radial-gradient(circle at center, #e60a64, transparent 70%)`,
-        }}
-      />
 
-      <div className="container relative z-10 mx-auto px-4 md:px-6">
+
+
+<div className="absolute top-[10%] md:top-[12%]  left-10 z-20">
+  <Link to="/" className="group">
+    <div
+      className="inline-flex items-center justify-center gap-1 
+      rounded-md px-3 py-1 text-white font-medium shadow-md 
+      cursor-pointer transition text-sm
+      bg-gradient-to-r from-rose-600 via-pink-500 to-rose-400
+      hover:from-pink-500 hover:via-rose-500 hover:to-pink-600
+      group-hover:shadow-lg group-hover:scale-105"
+    >
+      <ArrowLeft className="h-3 w-3" />
+      Back
+    </div>
+  </Link>
+</div>
+
+
+
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6 mt-[25vw] md:mt-[10vw] sm:mt-[20vw] ">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-[28px] border border-border/40 bg-secondary/20 shadow-xl backdrop-blur-sm">
           <div className="grid md:grid-cols-2">
             <div className="relative p-6 md:p-10" ref={formRef}>
@@ -161,6 +174,8 @@ export default function ContactUs() {
                 </motion.div>
               </motion.form>
             </div>
+
+            
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
